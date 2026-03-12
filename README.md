@@ -7,7 +7,29 @@ This architecture evades relying on a direct webhook to database communication, 
 
 ## Architecture Design
 
-![Architecture Diagram](makini.png)
+<table>
+  <tr>
+    <td>
+      <img src="makini.png" alt="Architecture Diagram" width="100%">
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
+      <img src="2image.png" alt="Architecture Diagram" width="100%">
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
+      <img src="3image.png" alt="Architecture Diagram" width="100%">
+    </td>
+  </tr>
+</table>
 
 The design focuses on three core principles:
 
