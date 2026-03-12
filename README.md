@@ -1,13 +1,13 @@
 # Industrial-Grade Data Ingestion Pipeline (PoC)
 
 ### Overview
-This repository contains a Proof of Concept (PoC) demonstrating a scalable, fault-tolerant data ingestion pipeline. I built this to handle high-volume telemetry data spikes—such as IoT sensor reads or bulk ERP migrations—without crashing the main application or dropping critical payloads.
+This repository contains a Proof of Concept (PoC) I built, that demonstrates a scalable, fault-tolerant data ingestion pipeline. I built this to handle high-volume telemetry data spikes—such as IoT sensor reads or bulk ERP migrations—without crashing the main application or dropping critical payloads.
 
-Instead of relying on a traditional linear webhook-to-database workflow, this architecture uses a decoupled queue system built on n8n, Redis, and PostgreSQL, monitored by a real-time Streamlit dashboard.
+This architecture evades relying on a direct webhook to database communication, and instad uses a decoupled queue system built on n8n, Redis, and PostgreSQL, monitored by a real-time Streamlit dashboard.
 
 ## Architecture Design
 
-![Architecture Diagram](link_to_your_image.png)
+![Architecture Diagram](makini.png)
 
 The design focuses on three core principles:
 
@@ -26,9 +26,10 @@ The design focuses on three core principles:
 ### Quick Start (Running Locally)
 
 ### Prerequisites
-You will need Docker and Docker Compose installed on your machine.
+If you want to run this proyect you would need Docker and Docker Compose installed on your machine.
 
 ### 1. Clone the repository
 ```bash
 git clone [https://github.com/yourusername/your-repo-name.git](https://github.com/yourusername/your-repo-name.git)
 cd your-repo-name
+```
