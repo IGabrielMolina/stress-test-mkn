@@ -3,7 +3,7 @@
 ### Overview
 This repository contains a Proof of Concept (PoC) I built, that demonstrates a scalable, fault-tolerant data ingestion pipeline. I built this to handle high-volume telemetry data spikes—such as IoT sensor reads or bulk ERP migrations—without crashing the main application or dropping critical payloads.
 
-This architecture evades relying on a direct webhook to database communication, and instad uses a decoupled queue system built on n8n, Redis, and PostgreSQL, monitored by a real-time Streamlit dashboard.
+This architecture evades relying on a direct webhook to database communication, and instead uses a decoupled queue system built on n8n, Redis, and PostgreSQL, monitored by a real-time Streamlit dashboard.
 
 ## Architecture Design
 
