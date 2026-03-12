@@ -1,0 +1,44 @@
+x-worker-template: &worker-base
+  image: n8nio/n8n:latest
+  restart: always
+  command: worker
+  env_file: .env
+  environment:
+    - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+    - EXECUTIONS_MODE=queue
+    - QUEUE_BULL_REDIS_HOST=redis
+    - QUEUE_BULL_REDIS_PORT=6379
+    - QUEUE_BULL_REDIS_PASSWORD=${REDIS_PASSWORD}
+    - DB_TYPE=postgresdb
+    - DB_POSTGRESDB_HOST=postgres
+    - DB_POSTGRESDB_USER=${DB_USER}
+    - DB_POSTGRESDB_PASSWORD=${DB_PASSWORD}
+    - DB_POSTGRESDB_DATABASE=${DB_NAME}
+    - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
+    - NODE_FUNCTION_ALLOW_BUILTIN=os
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+  networks:
+    - internal_net
+
+services:
+  n8n-worker-alfa:
+    <<: *worker-base
+    container_name: makini-worker-alfa
+    hostname: worker-alfa
+
+  n8n-worker-beta:
+    <<: *worker-base
+    container_name: makini-worker-beta
+    hostname: worker-beta
+
+  n8n-worker-gama:
+    <<: *worker-base
+    container_name: makini-worker-gama
+    hostname: worker-gama
+
+networks:
+  internal_net:

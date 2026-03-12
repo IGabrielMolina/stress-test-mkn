@@ -1,0 +1,11 @@
+.env
+
+postgres_data/
+n8n_data/
+redis_data/
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/
