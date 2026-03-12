@@ -48,7 +48,7 @@ The design focuses on three core principles:
 ### Quick Start (Running Locally)
 
 ### Prerequisites
-If you want to run this proyect you would need Docker and Docker Compose installed on your machine.
+If you want to run this project you would need Docker and Docker Compose installed on your machine.
 
 ### 1. Clone the repository
 ```bash
