@@ -10,7 +10,7 @@ This architecture evades relying on a direct webhook to database communication, 
 <table>
   <tr>
     <td>
-      <img src="makini.png" alt="Architecture Diagram" width="100%">
+      <img src="mkn.png" alt="Architecture Diagram" width="100%">
     </td>
   </tr>
 </table>
