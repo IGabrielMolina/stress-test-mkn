@@ -97,5 +97,8 @@ networks:
   internal_net:
     driver: bridge
   shared_net:
-    name: ${EXTERNAL_NETWORK_NAME:-makini_shared_network}
+    name: ${EXTERNAL_NETWORK_NAME:-mkn_shared_network}
     external: true
+  mkn_shared_network:
+    name: mkn_shared_network
+    driver: bridge

@@ -4,7 +4,7 @@ from sqlalchemy import create_engine, text
 import subprocess
 import time
 
-st.set_page_config(page_title="Makini Ops", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Mkn Ops", layout="wide", initial_sidebar_state="collapsed")
 
 st.markdown("""
     <style>
@@ -56,7 +56,7 @@ st.markdown("""
 @st.cache_resource
 def get_engine():
     try:
-        U, P, H, PRT, D = "admini_user", "makini_e4444rRbdunwpbwEfb-e-w32221-dXcvv0i_ZAQPm2-1-_324", "postgres", "5432", "n8n_dbdb"
+        U, P, H, PRT, D = "admini_user", "mkn_e4444rRbdunwpbwEfb-e-w32221-dXcvv0i_ZAQPm2-1-_324", "postgres", "5432", "n8n_dbdb"
         return create_engine(f"postgresql+psycopg2://{U}:{P}@{H}:{PRT}/{D}")
     except: return None
 
@@ -67,7 +67,7 @@ def fetch_data():
     try: return pd.read_sql("SELECT * FROM telemetry ORDER BY processed_at DESC LIMIT 1000", engine)
     except: return pd.DataFrame()
 
-st.markdown("# 🏭 Makini Industrial OS")
+st.markdown("# 🏭 Mkn Industrial OS")
 st.caption("v2.5.0-stable | Distributed Cluster Monitoring")
 
 col_btn1, col_btn2 = st.columns([3, 1])

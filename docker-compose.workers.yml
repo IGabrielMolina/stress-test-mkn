@@ -27,17 +27,17 @@ x-worker-template: &worker-base
 services:
   n8n-worker-alfa:
     <<: *worker-base
-    container_name: makini-worker-alfa
+    container_name: mkn-worker-alfa
     hostname: worker-alfa
 
   n8n-worker-beta:
     <<: *worker-base
-    container_name: makini-worker-beta
+    container_name: mkn-worker-beta
     hostname: worker-beta
 
   n8n-worker-gama:
     <<: *worker-base
-    container_name: makini-worker-gama
+    container_name: mkn-worker-gama
     hostname: worker-gama
 
 networks:
