@@ -8,19 +8,46 @@ This architecture evades relying on a direct webhook to database communication, 
 ## Architecture Design
 
 <table>
-  <tr>
-    <td>
-      <img src="mkn.png" alt="Architecture Diagram" width="100%">
-    </td>
-  </tr>
-</table>
 
-<table>
-  <tr>
-    <td>
-      <img src="2image.png" alt="Architecture Diagram" width="100%">
-    </td>
-  </tr>
+```mermaid
+flowchart LR
+    %% External Nodes
+    IoT([Python Simulator IoT])
+
+    %% Layers
+    subgraph Ingestion Layer
+        Gateway[n8n Main Gateway]
+        Broker[(Redis Message Broker)]
+    end
+
+    subgraph Compute Cluster
+        W_Alfa[Worker Alfa]
+        W_Beta[Worker Beta]
+        W_Gama[Worker Gama]
+    end
+
+    subgraph Persistence Layer
+        DB[(PostgreSQL)]
+    end
+
+    subgraph Output Layer
+        Dash[MKN OS]
+    end
+
+    %% Flow execution
+    IoT -->|Incoming Data| Gateway
+    Gateway -->|Queue Push| Broker
+
+    Broker -->|JS Data Cleaning & Tagging| W_Alfa
+    Broker -->|JS Data Cleaning & Tagging| W_Beta
+    Broker -->|JS Data Cleaning & Tagging| W_Gama
+
+    W_Alfa -->|Async Write| DB
+    W_Beta -->|Async Write| DB
+    W_Gama -->|Async Write| DB
+
+    DB -.->|Cloudflare Tunnel| Dash
+```
 </table>
 
 <table>
